@@ -1,7 +1,7 @@
 ## Final project for the Manual and Automated Testing Course
 
 ### Project description:
--   Framework used: BDD  (Behaviour Driven Development)
+-   Framework used: BDD  (Behaviour Driven Development - Page Object Model)
 -   Feature files that contain different scenarios (simple, outline)
 -   Tags that separate different tests (@T1, @T2, etc)
 -   Use of multiple selectors
