@@ -12,6 +12,7 @@ class Home_page(Browser):
 
     # selectorii de pe licentepc
     LOGIN_LINK = (By.XPATH, '//*[@id="header_wrapper"]//*[@title="Contul meu"]')
+    CLICK_MY_ACCOUNT_BOTTOM_LINK = (By.XPATH, '//a[@href="/account"]')
     ACCEPT_COOKIES_BUTTON = (By.XPATH, '//*[@id="cookie-policy-overlay"]//button[1][@class = "btn btn-primary"]')
     EMAIL = (By.ID, 'quick_login__email')
     PASSWORD = (By.ID, 'quick_login__password')
@@ -24,6 +25,10 @@ class Home_page(Browser):
         accept_cookie = WebDriverWait(self.chrome, 10).until(EC.visibility_of_element_located(
             self.ACCEPT_COOKIES_BUTTON))
         accept_cookie.click()
+
+    def click_my_account_bottom_link(self):
+        bottom_link = self.chrome.find_element(*self.CLICK_MY_ACCOUNT_BOTTOM_LINK)
+        bottom_link.click()
 
     def click_autentificare_link(self):
         max_try = 3

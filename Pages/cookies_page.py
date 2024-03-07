@@ -2,13 +2,14 @@ from selenium.webdriver.common.by import By
 from selenium import webdriver
 from browser import Browser
 from time import sleep
-
+import logging
 
 class Cookies_page(Browser):
 
     # selectorul pentru linkul cu "Politica de Cookies"
     COOKIES_LINK = (By.XPATH, '//*[@href="/info/cookies"]')
     HOME_LINK = (By.ID, '//*[@id="header_logo"]')
+    EMAIL_ADDRESS_LINK = (By.XPATH, '//a[@href="mailto:vanzari@licentepc.ro"]')
 
     def open_home_page(self):
         self.chrome.get("https://www.licentepc.ro/")
@@ -32,3 +33,17 @@ class Cookies_page(Browser):
     def click_return_to_home_page(self):
         button_home = self.chrome.find_element(*self.HOME_LINK)
         button_home.click()
+
+
+    def open_cookies_policy_page(self):
+        self.chrome.get("https://www.licentepc.ro/info/cookies")
+
+    def click_email_address(self):
+        mailto = self.chrome.find_element(*self.EMAIL_ADDRESS_LINK)
+        mailto.click()
+
+    def check_redirecting_to_email_client_app(self):
+        expected_txt = "mailto:"
+        current_txt = str(self.EMAIL_ADDRESS_LINK)
+        assert expected_txt in current_txt
+        logging.info("Test passed : The selector contains the expected command for redirecting to the email client app.")
