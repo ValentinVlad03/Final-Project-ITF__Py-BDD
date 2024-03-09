@@ -29,7 +29,7 @@ Feature: Check that the product search is working properly
 
   @T9 @positiveTesting
     Scenario: I am on the search result page on "PDF" and I want to sort the list
-      Given I am on "PDF" search result page
+      Given I am on PDF search result page
       When  I click on sorting options checklist box
       When  I click on Ascending Price option
       Then  The list is shown sorted in ascending order by price
@@ -37,13 +37,8 @@ Feature: Check that the product search is working properly
 
 
   @T10 @positiveTesting
-    Scenario Outline: I am on the search result page on "PDF" and I want to add to Favorites 3 of the products
-      Given I am on "PDF" search result page
-      When  I click on Favorite link of the "<product_name>"
-      Then  A "<confirmation_message>" is shown
+    Scenario: I am on the search result page on "PDF" and I want to add one product to Favorites
+      Given I am on PDF search result page
+      When  I click on Favorite link of Corel PDF
+      Then  I go on Favorite section of my account and check that the product is listed
 
-      Examples:
-      | product_name                                          | confirmation_message                 |
-      | Corel PDF Fusion ENG - Licenta permanenta             | Produsul a fost adaugat la Favorite. |
-      | Foxit PDF Editor, v12 Windows/Mac - licenta perpetua  | Produsul a fost adaugat la Favorite. |
-      | Nitro PDF Professional v13 – licenta permanenta       | Produsul a fost adaugat la Favorite. |

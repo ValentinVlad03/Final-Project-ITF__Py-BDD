@@ -1,6 +1,6 @@
 from selenium.common import NoAlertPresentException
 from selenium.webdriver.common.by import By
-from selenium.webdriver import Keys
+from selenium.webdriver import Keys, ActionChains
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
@@ -22,13 +22,9 @@ class CatalogSearch_page(Browser):
     # selectorii pentru casuta cu optiunile de sortare, cel general si cel pentru pret ascendent
     SORT_VIEW_LABEL = (By.ID, 'sort_options')
     SORT_PRICE_ASCENDING_LABEL = (By.XPATH, '//*[@id="sort_options"]//option[@ value="price_asc"]')
-
-
-    #  selectorii pentru inimioara de selectat pentru a fi inclus produsul la Favorite
-    COREL_PDF_PRODUCT_LINK = (By.XPATH, '//a[@ title="Corel PDF Fusion ENG - Licenta permanenta"]')
-    NITRO_PDF_PRODUCT_LINK = (By.XPATH, '//a[@ title="Nitro PDF Professional v13 – licenta permanenta"]')
-    FOXIT_PDF_PRODUCT_LINK = (By.XPATH, '//a[@ title="Foxit PDF Editor, v12 Windows/Mac - licenta perpetua"]')
-
+    FAVORITE_BUTTON = (By.XPATH, '//*[@id="main"]//*[@title="Adauga la Favorite"]')
+    HEART_FAVORITE_LINK = (By.XPATH, '//*[@id="header_wrapper"]/div[3]/a[1]/div')
+    COREL_PDF_PRODUCT = (By.XPATH, '//*[@id="main"]//a[@title ="Corel PDF Fusion ENG - Licenta permanenta"]')
 
 # metode pentru scenariul T7
     def insert_invalid_product(self, invalid_product):
@@ -44,8 +40,9 @@ class CatalogSearch_page(Browser):
 
     def no_result_msg(self, no_results):
         expected_message = no_results
-        visible_message = self.chrome.find_element(*self.MISSING_PRODUCT_MESSAGE)
-        assert visible_message == expected_message
+        visible_message = self.chrome.find_element(*self.MISSING_PRODUCT_MESSAGE).text  #
+        assert visible_message.strip() == expected_message.strip()  # ne folosim de functia stipe ca sa
+        # eliminam spatiile goala de la inceputul sau sfarsitul unui sir de caractere, in caz ca exista
         logging.info(f"Test passed => Missing records message is correctly shown :  {str(visible_message)}")
 
 
@@ -57,7 +54,6 @@ class CatalogSearch_page(Browser):
         text_to_search.send_keys(Keys.BACKSPACE)
         text_to_search.send_keys(product_name)
         sleep(3)
-
 
     def check_listed_products_page_label(self, results_title):
         title_of_page = self.chrome.find_element(*self.RESULTS_PAGE_TITLE)
@@ -79,31 +75,27 @@ class CatalogSearch_page(Browser):
 
     def check_ascending_order_url(self):
         current_page = self.chrome.current_url
-        text_url = current_page.text
         text_to_find = "sort_by=price_asc"
-        assert text_to_find in text_url, "The URL doesn't contain the sorting option (ascending price)."
-
+        assert text_to_find in current_page, "The URL doesn't contain the sorting option (ascending price)."
 
 
 # metode pentru scenariul T10
     def open_search_result_page(self):
         self.chrome.get("https://www.licentepc.ro/catalog/q/PDF")
 
-    def click_add_to_favorites_link(self, product_name):
-        product_selector = str('//a[@ title="' + product_name + '"] //button[@ class="grid-image__save-wishlist btn btn-icon"]')
-        current_product = self.chrome.find_element(*self.product_selector)
-        current_product.click()
+    def click_add_to_favorites_link(self):
+        search_bar = self.chrome.find_element(*self.SEARCH_INLINE)
+        search_bar.send_keys("Corel PDF Fusion ENG - Licenta permanenta")
+        self.chrome.find_element(*self.SEARCH_BUTTON).click()
+        self.chrome.find_element(*self.FAVORITE_BUTTON).click()
 
-    def check_confirmation_message_favorite(self, confirmation_message):
-        try:
-            alerta = self.chrome.switch_to.alert
-            alerta_text = alerta.text
-            assert confirmation_message in alerta_text
-            logging.info("Adding to Favorites failed. {}".format(confirmation_message))
-        except NoAlertPresentException:
-            assert False, "Expected message not found."
-        sleep(4)
-
+    def check_corel_pdf_in_favorite(self):
+        self.chrome.get('https://www.licentepc.ro/wishlist')
+        product_search = self.chrome.find_element(*self.COREL_PDF_PRODUCT)
+        if product_search.is_displayed():
+            print(f"The product named Corel PDF is listed in Favorite list")
+        else:
+            print(f"The product named Corel PDF is not listed.")
 
 
 

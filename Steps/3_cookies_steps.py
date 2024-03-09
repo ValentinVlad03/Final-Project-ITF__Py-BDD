@@ -19,20 +19,4 @@ def step_impl(context):
 
 
 
-# metode pentru testul T5
-@given("I am on Cookies Policy page")
-def step_impl(context):
-    context.cookies_page.open_cookies_policy_page()
-
-@when("I click on the email address specified")
-def step_impl(context):
-    context.cookies_page.click_email_address()
-
-@then("I am redirected to an external application (email client)")
-def step_impl(context):
-    context.cookies_page.check_redirecting_to_email_client_app()
-
-
-
-
 

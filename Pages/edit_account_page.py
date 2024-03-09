@@ -1,4 +1,4 @@
-from selenium.webdriver import Keys
+from selenium.webdriver import Keys, ActionChains
 from selenium.webdriver.common.by import By
 from browser import Browser
 from time import sleep
@@ -45,4 +45,8 @@ class Edit_Account_page(Browser):
 
     def click_update_button(self):
         update_now = self.chrome.find_element(*self.UPDATE_BUTTON)
+        self.chrome.execute_script("arguments[0].style.zIndex = '999';", update_now)
+        self.chrome.execute_script("arguments[0].style.visibility = 'visible';", update_now)
+        self.chrome.execute_script("arguments[0].style.display = 'block';", update_now)
+        ActionChains(self.chrome).move_to_element_with_offset(update_now, 0, 0).perform()
         update_now.click()

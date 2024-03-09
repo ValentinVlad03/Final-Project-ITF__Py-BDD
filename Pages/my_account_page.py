@@ -16,11 +16,10 @@ class My_Account_page(Browser):
         try:
             sing_in_button = self.chrome.find_element(*self.SIGN_OUT_LINK)
             sing_in_button.click()
-            sleep(2)
         except Exception as i:
             logging.error(f"An error occurred while clicking the Sign Out button =>  {str(i)}")
 
     def check_redirect_to_home_page(self):
-        homepage_url = "https://www.licentepc.ro"
+        homepage_url = "https://www.licentepc.ro/"
         assert self.chrome.current_url == homepage_url
         logging.info(f"Test passed: Current URL match the expected home page URL =>  {str(homepage_url)}")

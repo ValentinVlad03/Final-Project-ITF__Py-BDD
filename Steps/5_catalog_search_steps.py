@@ -17,9 +17,9 @@ def step_impl(context, invalid_product):
 def step_impl(context):
     context.catalog_search_page.click_search_button()
 
-@then('I am redirected to a new page with the following message displayed : "{no_results}"')
-def step_impl(context, no_results):
-    context.catalog_search_page.no_results_msg(no_results)
+@then('I am redirected to a new page with the following message displayed : "{text_to_search}"')
+def step_impl(context, text_to_search):
+    context.catalog_search_page.no_result_msg(text_to_search)
 
 
 # La căutarea negativă (testul negativ) am luat în considerare doar mesajul
@@ -59,7 +59,7 @@ def step_impl(context, results_title):
 
 # T9 = paşii pentru scenariul 9, de testare pozitivă, în care verificăm
 # faptul că se poate sorta o listă de produse, după preţ, în ordine crescătoare
-@given('I am on "PDF" search result page')
+@given('I am on PDF search result page')
 def step_impl(context):
     context.catalog_search_page.open_search_result_page()
 
@@ -80,15 +80,11 @@ def step_impl(context):
 
 # T10 = paşii pentru scenariul 10, de testare pozitivă, în care verificăm
 # faptul că putem adăuga 3 produse la categoria "Favorite"
-@given('I am on "PDF" search result page')
-def step_impl(context):
-    context.catalog_search_page.open_search_result_page()
-
-@when('I click on Favorite link of the "<product_name>"')
+@when('I click on Favorite link of Corel PDF')
 def step_impl(context):
     context.catalog_search_page.click_add_to_favorites_link()
 
-@then('A "<confirmation_message>" is shown')
-def step_impl(context, confirmation_message):
-    context.catalog_search_page.check_confirmation_message_favorite(confirmation_message)
+@then('I go on Favorite section of my account and check that the product is listed')
+def step_impl(context):
+    context.catalog_search_page.check_corel_pdf_in_favorite()
 

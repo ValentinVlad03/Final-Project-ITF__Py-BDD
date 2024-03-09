@@ -1,10 +1,6 @@
 from behave import *
 
 
-@given("I am on home page")
-def step_impl(context):
-    context.funding_projects_page.open_home_page()
-
 @when("I click on Funding Projects link")
 def step_impl(context):
     context.funding_projects_page.open_funding_projects_page()

@@ -5,7 +5,7 @@ Feature: Check that the authentication button on the Licentepc website is workin
     Given I am on the Licentepc website homepage
     When  I click on accept cookies button
     When  I click on My Account link
-    When  I enter my valid email
+    When  I enter my valid email address
     When  I insert my invalid "<password>"
     When  I click on sign in account button
     Then  I receive an "<error_message>"
