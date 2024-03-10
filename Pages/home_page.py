@@ -38,7 +38,7 @@ class Home_page(Browser):
         # O folosim pentru a ne asigura că elementul se află în prim plan şi nu este acoperit de alte elemente.
         self.chrome.execute_script("arguments[0].style.zIndex = '999';", bottom_link)
 
-        # Executam un alt script cu care ne asigurăm că elementul este vizibil în pagină.
+        # Executăm un alt script cu care ne asigurăm că elementul este vizibil în pagină.
         self.chrome.execute_script("arguments[0].style.visibility = 'visible';", bottom_link)
 
         # Un al treilea script JavaScript este utilizat pentru a seta proprietatea CSS display a
