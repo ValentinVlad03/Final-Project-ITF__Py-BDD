@@ -12,7 +12,7 @@ Feature: Check that the authentication button on the Licentepc website is workin
     Examples:
       | password  | error_message                                         |
       | asdasdsa  | Te rugam sa verifici daca ai introdus parola corecta. |
-#
+
 
   @T2 @positiveTesting
   Scenario: I am on the Licentepc website homepage and I want to login on my account
@@ -22,5 +22,3 @@ Feature: Check that the authentication button on the Licentepc website is workin
       When  I enter my valid password
       When  I click on the sign in account button
       Then  I am redirected to my account page
-
-
