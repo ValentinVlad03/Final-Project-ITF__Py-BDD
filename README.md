@@ -11,12 +11,12 @@
         - @T2 - Scenario that tests the login with valid password\
         - @T3 - Scenario that tests changing the user's account data (the address used for invoicing)\
         - @T4 - Scenario that tests that the Cookies Policy page contains a specified text\
-        - @T5 - Scenario that test redirecting to an external application (to an email client)\
-        - @T6 - Scenario that test redirecting to an external website\
-        - @T7 - Scenario outline that test searching for an invalid product\
-        - @T8 - Scenario that test searching for a product in the search bar\
-        - @T9 - Scenario that tests the sorting options for products listed as a search result\
-        - @T10 - Scenario that test that three products from the list can be added to Favorites\
+        - @T5 - Scenario that test redirecting to an external website\
+        - @T6 - Scenario outline that test searching for an invalid product\
+        - @T7 - Scenario that test searching for a product in the search bar\
+        - @T8 - Scenario that tests the sorting options for products listed as a search result\
+        - @T9 - Scenario that test that one product from the list can be added to Favorites list\
+        - @T10 - Scenario that test that a product can be removed from the Favorites list\
         - @T11 - Scenario that test the sign out option and returning to home page
 
 
