@@ -16,7 +16,7 @@
         - @T7 - Scenario that test searching for a product in the search bar\
         - @T8 - Scenario that tests the sorting options for products listed as a search result\
         - @T9 - Scenario that test that one product from the list can be added to Favorites list\
-        - @T10 - Scenario that test that a product can be removed from the Favorites list\ 
+        - @T10 - Scenario that test that a product can be removed from the Favorites list\
         - @T11 - Scenario that test the sign out option and returning to home page
 
 
