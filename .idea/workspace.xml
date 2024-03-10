@@ -4,18 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c8c0a569-3082-458b-a5ab-982cc889e465" name="Changes" comment="second commit">
+    <list default="true" id="c8c0a569-3082-458b-a5ab-982cc889e465" name="Changes" comment="updated comments on methods">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Features/4_funding_projects.feature" beforeDir="false" afterPath="$PROJECT_DIR$/Features/4_funding_projects.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Features/5_catalog_search.feature" beforeDir="false" afterPath="$PROJECT_DIR$/Features/5_catalog_search.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages/catalog_search_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/catalog_search_page.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages/cookies_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/cookies_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Features/1_login_button.feature" beforeDir="false" afterPath="$PROJECT_DIR$/Features/1_login_button.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pages/edit_account_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/edit_account_page.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages/funding_projects_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/funding_projects_page.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages/home_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/home_page.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages/my_account_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/my_account_page.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Steps/5_catalog_search_steps.py" beforeDir="false" afterPath="$PROJECT_DIR$/Steps/5_catalog_search_steps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/behave-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/behave-report.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -206,12 +199,46 @@
       <option name="project" value="LOCAL" />
       <updated>1710017438920</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="3rd commit">
+      <option name="closed" value="true" />
+      <created>1710062451963</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1710062451963</updated>
+    </task>
+    <task id="LOCAL-00005" summary="updated comments on methods">
+      <option name="closed" value="true" />
+      <created>1710064335219</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1710064335219</updated>
+    </task>
+    <task id="LOCAL-00006" summary="updated comments on methods">
+      <option name="closed" value="true" />
+      <created>1710064547720</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1710064547720</updated>
+    </task>
+    <task id="LOCAL-00007" summary="updated comments on methods">
+      <option name="closed" value="true" />
+      <created>1710065487247</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1710065487247</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
     <MESSAGE value="second commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="second commit" />
+    <MESSAGE value="3rd commit" />
+    <MESSAGE value="updated comments on methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated comments on methods" />
   </component>
 </project>
