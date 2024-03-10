@@ -7,9 +7,9 @@ import logging
 
 class Edit_Account_page(Browser):
 
-    # selector on account page
+    # selector pe pagina Contul_meu
     UPDATE_ACCOUNT_LINK = (By.CSS_SELECTOR, '#main > section > div > aside.page__aside-main > ul > li.customer-menu__item.customer-menu__item--edit-account > a')
-    # selectors on edit_account page
+    # selectori din secţiunea Actualizare_cont
     ADDRESS = (By.ID, 'customer_update__billing_address_1')
     UPDATE_BUTTON = (By.XPATH, '//*[@id="customer_update__submit"]')
 
