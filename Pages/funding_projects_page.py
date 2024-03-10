@@ -36,7 +36,7 @@ class FundingProjects_page(Browser):
         self.chrome.switch_to.window(new_tab)
         asus_url = "https://www.asus.com/ro/"
         assert self.chrome.current_url == asus_url
-        logging.info(f"Test passed => Current URL match the expected URL :  {str(asus_url)}")
+        logging.info(f"Test passed => Current URL match the expected URL: {str(asus_url)}")
         #ii spun sa inchida noul tab deschis
         self.chrome.close()
         #ii spun sa se mute pe tab-ul principal

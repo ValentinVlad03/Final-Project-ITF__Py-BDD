@@ -4,26 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c8c0a569-3082-458b-a5ab-982cc889e465" name="Changes" comment="initial commit">
+    <list default="true" id="c8c0a569-3082-458b-a5ab-982cc889e465" name="Changes" comment="second commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Features/catalog_search.feature" beforeDir="false" afterPath="$PROJECT_DIR$/Features/5_catalog_search.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Features/cookies.feature" beforeDir="false" afterPath="$PROJECT_DIR$/Features/3_cookies.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Features/edit_account.feature" beforeDir="false" afterPath="$PROJECT_DIR$/Features/2_edit_account.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Features/funding_projects.feature" beforeDir="false" afterPath="$PROJECT_DIR$/Features/4_funding_projects.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Features/login_button.feature" beforeDir="false" afterPath="$PROJECT_DIR$/Features/1_login_button.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Features/my_account.feature" beforeDir="false" afterPath="$PROJECT_DIR$/Features/6_my_account.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Features/4_funding_projects.feature" beforeDir="false" afterPath="$PROJECT_DIR$/Features/4_funding_projects.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Features/5_catalog_search.feature" beforeDir="false" afterPath="$PROJECT_DIR$/Features/5_catalog_search.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pages/catalog_search_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/catalog_search_page.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pages/cookies_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/cookies_page.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pages/edit_account_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/edit_account_page.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pages/funding_projects_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/funding_projects_page.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pages/home_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/home_page.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pages/my_account_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/my_account_page.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Steps/catalog_search_steps.py" beforeDir="false" afterPath="$PROJECT_DIR$/Steps/5_catalog_search_steps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Steps/cookies_steps.py" beforeDir="false" afterPath="$PROJECT_DIR$/Steps/3_cookies_steps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Steps/edit_account_steps.py" beforeDir="false" afterPath="$PROJECT_DIR$/Steps/2_edit_account_steps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Steps/funding_projects_steps.py" beforeDir="false" afterPath="$PROJECT_DIR$/Steps/4_funding_projects_steps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Steps/login_button_steps.py" beforeDir="false" afterPath="$PROJECT_DIR$/Steps/1_login_button_steps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Steps/my_account_steps.py" beforeDir="false" afterPath="$PROJECT_DIR$/Steps/6_my_account_steps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Steps/5_catalog_search_steps.py" beforeDir="false" afterPath="$PROJECT_DIR$/Steps/5_catalog_search_steps.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/behave-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/behave-report.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -207,11 +198,20 @@
       <option name="project" value="LOCAL" />
       <updated>1709841606442</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="second commit">
+      <option name="closed" value="true" />
+      <created>1710017438920</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1710017438920</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
+    <MESSAGE value="second commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="second commit" />
   </component>
 </project>

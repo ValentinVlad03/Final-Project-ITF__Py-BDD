@@ -26,7 +26,15 @@ class CatalogSearch_page(Browser):
     HEART_FAVORITE_LINK = (By.XPATH, '//*[@id="header_wrapper"]/div[3]/a[1]/div')
     COREL_PDF_PRODUCT = (By.XPATH, '//*[@id="main"]//a[@title ="Corel PDF Fusion ENG - Licenta permanenta"]')
 
-# metode pentru scenariul T7
+    # selectorii pentru a naviga catre pagina produsului "Corel PDF Fusion" pentru a-l scoate din lista de Favorite
+    SOFTWARE_CATEGORY_LINK = (By.XPATH, '//li[@id="header_menu_item_100009465"] //a[@href="/catalog/software-653469"]')
+    COREL_CATEGORY_LINK = (By.XPATH, '//li[@class="facet__option facet__option--tree facet__option--level-2"] //a[@href="/catalog/corel-653419"]')
+    COREL_PDF_FUSION_CATEGORY_LINK = (By.XPATH, '//li[@class="facet__option facet__option--tree facet__option--level-3"] //a[@href="/catalog/corel-pdf-fusion-653433"]')
+    COREL_PDF_FUSION_PRODUCT_LINK = (By.XPATH, '//div[@class="product product--grid"] //a[@class="product__name"]')
+    COREL_PDF_SAVE_WISHLIST_LINK = (By.XPATH, '//a[@class="product-summary__save-wishlist btn product-summary__save-wishlist--saved"]')
+    EMPTY_LIST_FAV_LIST_MSG = (By.XPATH, '//h1[@class="wishlist__empty-title"]')
+
+# metode pentru scenariul T6
     def insert_invalid_product(self, invalid_product):
         text_to_search = self.chrome.find_element(*self.SEARCH_INLINE)
         text_to_search.send_keys(Keys.CONTROL, 'a')
@@ -47,7 +55,7 @@ class CatalogSearch_page(Browser):
 
 
 
-# metode pentru scenariul T8
+# metode pentru scenariul T7
     def insert_valid_product(self, product_name):
         text_to_search = self.chrome.find_element(*self.SEARCH_INLINE)
         text_to_search.send_keys(Keys.CONTROL, 'a')
@@ -63,7 +71,7 @@ class CatalogSearch_page(Browser):
         sleep(3)
 
 
-# metode pentru scenariul T9
+# metode pentru scenariul T8
     def click_sort_checklist_box(self):
         sorting_checkbox = self.chrome.find_element(*self.SORT_VIEW_LABEL)
         sorting_checkbox.click()
@@ -79,7 +87,7 @@ class CatalogSearch_page(Browser):
         assert text_to_find in current_page, "The URL doesn't contain the sorting option (ascending price)."
 
 
-# metode pentru scenariul T10
+# metode pentru scenariul T9
     def open_search_result_page(self):
         self.chrome.get("https://www.licentepc.ro/catalog/q/PDF")
 
@@ -87,10 +95,15 @@ class CatalogSearch_page(Browser):
         search_bar = self.chrome.find_element(*self.SEARCH_INLINE)
         search_bar.send_keys("Corel PDF Fusion ENG - Licenta permanenta")
         self.chrome.find_element(*self.SEARCH_BUTTON).click()
-        self.chrome.find_element(*self.FAVORITE_BUTTON).click()
+        # am adaugat o pauza de asteptare pentru a avea timp sa incarce butonul de FAVORITE
+        fav_button = WebDriverWait(self.chrome, 10).until(
+            EC.visibility_of_element_located(self.FAVORITE_BUTTON))
+        fav_button.click()
+
+    def go_to_favorite_section_in_my_account(self):
+        self.chrome.get("https://www.licentepc.ro/wishlist")
 
     def check_corel_pdf_in_favorite(self):
-        self.chrome.get('https://www.licentepc.ro/wishlist')
         product_search = self.chrome.find_element(*self.COREL_PDF_PRODUCT)
         if product_search.is_displayed():
             print(f"The product named Corel PDF is listed in Favorite list")
@@ -99,4 +112,36 @@ class CatalogSearch_page(Browser):
 
 
 
+# metode pentru scenariul T10
+    def click_software_category_link(self):
+        software_category = self.chrome.find_element(*self.SOFTWARE_CATEGORY_LINK)
+        software_category.click()
 
+    def click_corel_category_link(self):
+        corel_category = WebDriverWait(self.chrome, 10).until(
+            EC.visibility_of_element_located(self.COREL_CATEGORY_LINK))
+        corel_category.click()
+
+    def click_corel_pdf_fusion_category_link(self):
+        pdf_category = self.chrome.find_element(*self.COREL_PDF_FUSION_CATEGORY_LINK)
+        pdf_category.click()
+
+    def click_on_product_name(self):
+        product_name = self.chrome.find_element(*self.COREL_PDF_FUSION_PRODUCT_LINK)
+        product_name.click()
+
+    def click_activated_favorites_link(self):
+        save_to_wishlist = self.chrome.find_element(*self.COREL_PDF_SAVE_WISHLIST_LINK)
+        save_to_wishlist.click()
+
+    def check_if_empty_favorite_list(self):
+        sleep(3)
+        expected_msg = "Nu ai adaugat inca nimic in Favorite"
+        displayed_msg = self.chrome.find_element(*self.EMPTY_LIST_FAV_LIST_MSG).text
+        # if expected_msg in displayed_msg:
+        #     print(f"The product named 'Corel PDF' is not listed in 'Favorites' list. ")
+        # else:
+        #     print(f"The product was not removed from 'Favorites' list.")
+
+        assert expected_msg == displayed_msg
+        logging.info("Test passed => The product named 'Corel PDF' is not listed in the 'Favorites' list.")

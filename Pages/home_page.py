@@ -107,7 +107,7 @@ class Home_page(Browser):
         alerta = self.chrome.find_element(*self.ERROR_MESSAGE)
         alerta_text = alerta.text
         assert error_message in alerta_text
-        logging.info("Login failed {}".format(error_message))
+        logging.info("Login failed => {}".format(error_message))
 
     def insert_password(self):
         try:
@@ -119,4 +119,4 @@ class Home_page(Browser):
     def my_account_page(self):
         account_url = "https://www.licentepc.ro/account"
         assert self.chrome.current_url == account_url
-        logging.info("Test passed : Current URL match the expected account URL")
+        logging.info("Test passed => Current URL match the expected account URL")

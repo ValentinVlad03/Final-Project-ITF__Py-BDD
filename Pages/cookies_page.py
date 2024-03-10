@@ -28,9 +28,9 @@ class Cookies_page(Browser):
         text_to_search = "Care este durata de viata a unui cookie"
         actual_text = self.chrome.find_element(*self.TEXT).text
         if text_to_search in actual_text:
-            print(f"The text '{text_to_search}' is shown on this webpage: Politica de Cookies")
+            print(f"The text '{text_to_search}' is shown on this webpage: Politica de Cookies.")
         else:
-            print(f"The text '{text_to_search}' is not present on this webpage: Politica de Cookies")
+            print(f"The text '{text_to_search}' is not present on this webpage: Politica de Cookies.")
 
     def click_return_to_home_page(self):
         button_home = self.chrome.find_element(*self.HOME_LINK)

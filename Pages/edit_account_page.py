@@ -30,7 +30,7 @@ class Edit_Account_page(Browser):
     def my_account_page(self):
         account_url = "https://www.licentepc.ro/account"
         assert self.chrome.current_url == account_url
-        logging.info(f"Test passed: Current URL match the expected account URL =>  {str(account_url)}")
+        logging.info(f"Test passed => Current URL match the expected account URL: {str(account_url)}")
 
     def delete_current_address(self):
         text_address = self.chrome.find_element(*self.ADDRESS)

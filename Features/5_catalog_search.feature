@@ -1,6 +1,6 @@
 Feature: Check that the product search is working properly
 
-  @T7 @positiveTesting
+  @T6 @positiveTesting
     Scenario Outline: Trying to search for an invalid product that is not listed on the website
       Given I am on the Licentepc homepage and I want to search for an invalid product
       When  I enter the "<invalid_product>" name in the search box
@@ -13,7 +13,7 @@ Feature: Check that the product search is working properly
       | legume gratinate  | Incearca o noua cautare |
 
 
-  @T8 @positiveTesting
+  @T7 @positiveTesting
     Scenario Outline: Trying to search for a valid product that is listed on the website
       Given I am on the Licentepc homepage and I want to search for a valid product
       When  I enter the "<product_name>" in the search box
@@ -27,7 +27,7 @@ Feature: Check that the product search is working properly
 
 
 
-  @T9 @positiveTesting
+  @T8 @positiveTesting
     Scenario: I am on the search result page on "PDF" and I want to sort the list
       Given I am on PDF search result page
       When  I click on sorting options checklist box
@@ -36,9 +36,21 @@ Feature: Check that the product search is working properly
 
 
 
-  @T10 @positiveTesting
+  @T9 @positiveTesting
     Scenario: I am on the search result page on "PDF" and I want to add one product to Favorites
       Given I am on PDF search result page
       When  I click on Favorite link of Corel PDF
-      Then  I go on Favorite section of my account and check that the product is listed
+      Then  I go to Favorite section of my account and check that the product is listed
+
+
+
+  @T10 @positiveTesting
+    Scenario: I go to Corel PDF product page and remove it from the Favorite list
+      Given I am on home page
+      When  I click on "Software" link on the upper left side of the webpage
+      When  I click on "Corel" link from the left side category list
+      When  I click on "COREL PDF FUSION" link from category list on the left side
+      When  I click on product name link
+      When  I click on the activated Favorite link
+      Then  The product is removed from the list
 

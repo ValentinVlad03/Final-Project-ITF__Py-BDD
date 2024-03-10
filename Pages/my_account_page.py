@@ -22,4 +22,4 @@ class My_Account_page(Browser):
     def check_redirect_to_home_page(self):
         homepage_url = "https://www.licentepc.ro/"
         assert self.chrome.current_url == homepage_url
-        logging.info(f"Test passed: Current URL match the expected home page URL =>  {str(homepage_url)}")
+        logging.info(f"Test passed => Current URL match the expected home page URL: {str(homepage_url)}")

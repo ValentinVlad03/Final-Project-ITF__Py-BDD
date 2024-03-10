@@ -1,6 +1,6 @@
 Feature: Check that clicking on an company name link (from the list) redirect me to an external website
 
-  @T6 @positiveTesting
+  @T5 @positiveTesting
   Scenario: I am on Funding Projects page and I want to check redirecting to external websites
       Given I am on home page
       When  I click on Funding Projects link
