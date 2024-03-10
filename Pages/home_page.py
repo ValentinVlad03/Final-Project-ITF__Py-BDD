@@ -34,16 +34,16 @@ class Home_page(Browser):
     def click_my_account_bottom_link(self):
         bottom_link = WebDriverWait(self.chrome, 10).until(EC.visibility_of_element_located(
             self.CLICK_MY_ACCOUNT_BOTTOM_LINK))
-        # executam un script JavaScript pt a seta propietatea CSS Index la valoarea 999.
-        # O folosim pt a ne asigura elementul se afla in prim plan si nu este acoperit de alte elemente.
+        # Executăm un script JavaScript pentru a seta propietatea CSS Index la valoarea 999.
+        # O folosim pentru a ne asigura că elementul se află în prim plan şi nu este acoperit de alte elemente.
         self.chrome.execute_script("arguments[0].style.zIndex = '999';", bottom_link)
 
-        # executam un alt script cu care ne asiguram ca elementul este vizibil in pagina
+        # Executam un alt script cu care ne asigurăm că elementul este vizibil în pagină.
         self.chrome.execute_script("arguments[0].style.visibility = 'visible';", bottom_link)
 
         # Un al treilea script JavaScript este utilizat pentru a seta proprietatea CSS display a
         # elementului bottom_link la valoarea 'block'.
-        # Acest lucru poate fi folosit pentru a asigura că elementul este afișat în modul corect.
+        # Acest lucru poate fi folosit pentru a ne asigura că elementul este afişat în modul corect.
         self.chrome.execute_script("arguments[0].style.display = 'block';", bottom_link)
         ActionChains(self.chrome).move_to_element_with_offset(bottom_link, 0, 0).perform()
         self.chrome.implicitly_wait(3)
