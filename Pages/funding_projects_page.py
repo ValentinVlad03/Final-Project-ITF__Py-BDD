@@ -28,16 +28,16 @@ class FundingProjects_page(Browser):
         selected_link.click()
 
     def check_current_url(self):
-        #stabilesc tab-ul principal
+        # stabilesc care este tab-ul principal
         main_tab = self.chrome.current_window_handle
-        #ii spun ca s-a mai deschis un nou tab
+        # îi spun că s-a mai deschis un nou tab
         new_tab = self.chrome.window_handles[-1]
-        #ii spun sa se mute pe noul tab
+        # îi spun să se mute pe noul tab
         self.chrome.switch_to.window(new_tab)
         asus_url = "https://www.asus.com/ro/"
         assert self.chrome.current_url == asus_url
         logging.info(f"Test passed => Current URL match the expected URL: {str(asus_url)}")
-        #ii spun sa inchida noul tab deschis
+        # îi spun să închidă noul tab deschis
         self.chrome.close()
-        #ii spun sa se mute pe tab-ul principal
+        # îi spun să se mute înapoi pe tab-ul principal
         self.chrome.switch_to.window(main_tab)
