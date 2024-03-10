@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c8c0a569-3082-458b-a5ab-982cc889e465" name="Changes" comment="updated comments on methods">
+    <list default="true" id="c8c0a569-3082-458b-a5ab-982cc889e465" name="Changes" comment="updated comments">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Features/1_login_button.feature" beforeDir="false" afterPath="$PROJECT_DIR$/Features/1_login_button.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/catalog_search_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/catalog_search_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/cookies_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/cookies_page.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pages/edit_account_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/edit_account_page.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Steps/5_catalog_search_steps.py" beforeDir="false" afterPath="$PROJECT_DIR$/Steps/5_catalog_search_steps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/funding_projects_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/funding_projects_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/home_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/home_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/my_account_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/my_account_page.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -231,14 +234,55 @@
       <option name="project" value="LOCAL" />
       <updated>1710065487247</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="updated comments on methods">
+      <option name="closed" value="true" />
+      <created>1710065634762</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1710065634762</updated>
+    </task>
+    <task id="LOCAL-00009" summary="3rd commit">
+      <option name="closed" value="true" />
+      <created>1710065792437</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1710065792437</updated>
+    </task>
+    <task id="LOCAL-00010" summary="updated comments">
+      <option name="closed" value="true" />
+      <created>1710065865751</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1710065865751</updated>
+    </task>
+    <task id="LOCAL-00011" summary="updated comments">
+      <option name="closed" value="true" />
+      <created>1710065887572</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1710065887572</updated>
+    </task>
+    <task id="LOCAL-00012" summary="updated comments">
+      <option name="closed" value="true" />
+      <created>1710072625513</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1710072625513</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
     <MESSAGE value="second commit" />
-    <MESSAGE value="3rd commit" />
     <MESSAGE value="updated comments on methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated comments on methods" />
+    <MESSAGE value="3rd commit" />
+    <MESSAGE value="updated comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated comments" />
   </component>
 </project>
