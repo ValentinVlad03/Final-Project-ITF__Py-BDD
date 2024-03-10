@@ -1,9 +1,7 @@
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
-from selenium import webdriver
 from browser import Browser
-from time import sleep
-import logging
+
 
 class Cookies_page(Browser):
 

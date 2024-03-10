@@ -1,7 +1,6 @@
 from selenium.webdriver import Keys, ActionChains
 from selenium.webdriver.common.by import By
 from browser import Browser
-from time import sleep
 import logging
 
 
@@ -23,7 +22,6 @@ class Edit_Account_page(Browser):
         try:
             sing_in_button = self.chrome.find_element(*self.UPDATE_ACCOUNT_LINK)
             sing_in_button.click()
-            sleep(2)
         except Exception as i:
             logging.error(f"An error occurred while clicking the Edit Account button =>  {str(i)}")
 
@@ -36,12 +34,10 @@ class Edit_Account_page(Browser):
         text_address = self.chrome.find_element(*self.ADDRESS)
         text_address.send_keys(Keys.CONTROL, 'a')
         text_address.send_keys(Keys.BACKSPACE)
-        sleep(2)
 
     def enter_new_address(self):
         text_address = self.chrome.find_element(*self.ADDRESS)
         text_address.send_keys("Str. Veteranilor nr. 12, Bloc C8, Sc. A, Etaj 1, Apt. 6")
-        sleep(3)
 
     def click_update_button(self):
         update_now = self.chrome.find_element(*self.UPDATE_BUTTON)

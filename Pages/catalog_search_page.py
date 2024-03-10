@@ -1,11 +1,9 @@
-from selenium.common import NoAlertPresentException
 from selenium.webdriver.common.by import By
-from selenium.webdriver import Keys, ActionChains
+from selenium.webdriver import Keys
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 from browser import Browser
-from time import sleep
 import logging
 
 
@@ -80,7 +78,7 @@ class CatalogSearch_page(Browser):
     def select_ascending_price_option(self):
         sorting_option = WebDriverWait(self.chrome, 10).until(
             EC.visibility_of_element_located(self.SORT_PRICE_ASCENDING_LABEL))
-        # am adaugat o pauză de aşteptare pentru a avea timp să se afişeze lista cu opţiuni
+        # am adaugat o pauză de aşteptare pentru a avea timp să se afişeze lista cu opţiuni de sortare
         sorting_option.click()
 
     def check_ascending_order_url(self):
