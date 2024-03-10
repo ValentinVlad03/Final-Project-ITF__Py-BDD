@@ -26,7 +26,7 @@ def step_impl(context, text_to_search):
 # de eroare secundar (--Incearca o noua cautare--).
 #
 # Mesajul de eroare principal apare fragmentat în codul HTML, adică este rezultatul unei
-# construcţii a mai multor elemente de tip string. Nu ştiu cum să tratez această situaţie...
+# construcţii a mai multor elemente de tip string.
 #
 # (--Cautarea ta dupa surubelnita nu a intors niciun rezultat.--)
 #    Cautarea ta dupa + surubelnita + nu a intors niciun rezultat.
