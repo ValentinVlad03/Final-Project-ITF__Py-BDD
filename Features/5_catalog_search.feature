@@ -1,6 +1,6 @@
 Feature: Check that the product search is working properly
 
-  @T6 @positiveTesting
+  @T6 @negativeTesting
     Scenario Outline: Trying to search for an invalid product that is not listed on the website
       Given I am on the Licentepc homepage and I want to search for an invalid product
       When  I enter the "<invalid_product>" name in the search box
