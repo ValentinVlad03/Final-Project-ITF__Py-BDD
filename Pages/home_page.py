@@ -2,7 +2,6 @@ from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-
 from browser import Browser
 from time import sleep
 import logging
@@ -33,6 +32,7 @@ class Home_page(Browser):
     def click_my_account_bottom_link(self):
         bottom_link = WebDriverWait(self.chrome, 10).until(EC.visibility_of_element_located(
             self.CLICK_MY_ACCOUNT_BOTTOM_LINK))
+
         # Executăm un script JavaScript pentru a seta propietatea CSS Index la valoarea 999.
         # O folosim pentru a ne asigura că elementul se află în prim plan şi nu este acoperit de alte elemente.
         self.chrome.execute_script("arguments[0].style.zIndex = '999';", bottom_link)
@@ -71,7 +71,6 @@ class Home_page(Browser):
         except Exception as i:
             logging.error(f"An error occurred while inserting the email: {str(i)}. This email address is invalid.")
 
-
     def second_insert_email(self):
         try:
             user_email = self.chrome.find_element(*self.SECOND_EMAIL)
@@ -93,7 +92,6 @@ class Home_page(Browser):
             sing_in_button.click()
         except Exception as i:
             logging.error(f"An error occurred while clicking the Login button: {str(i)}")
-
 
     def second_click_login_button(self):
         try:
