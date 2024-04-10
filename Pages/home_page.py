@@ -21,13 +21,16 @@ class Home_page(Browser):
     SECOND_LOGIN_BUTTON = (By.ID, "customer_login__submit")
     ERROR_MESSAGE = (By.XPATH, "//*[@id='customer_login']//*[@data-error-type = 'password_mismatch']")
 
+
     def open_home_page(self):
         self.chrome.get("https://www.licentepc.ro/")
+
 
     def click_accept_cookies_button(self):
         accept_cookie = WebDriverWait(self.chrome, 10).until(EC.visibility_of_element_located(
             self.ACCEPT_COOKIES_BUTTON))
         accept_cookie.click()
+
 
     def click_my_account_bottom_link(self):
         bottom_link = WebDriverWait(self.chrome, 10).until(EC.visibility_of_element_located(
@@ -48,6 +51,7 @@ class Home_page(Browser):
         self.chrome.implicitly_wait(3)
         bottom_link.click()
 
+
     def click_autentificare_link(self):
         max_try = 3
         attempts = 0
@@ -64,6 +68,7 @@ class Home_page(Browser):
                 logging.error(f"An error occurred while clicking the Login button: {str(i)}")
             attempts += 1
 
+
     def insert_email(self):
         try:
             user_email = self.chrome.find_element(*self.EMAIL)
@@ -71,12 +76,14 @@ class Home_page(Browser):
         except Exception as i:
             logging.error(f"An error occurred while inserting the email: {str(i)}. This email address is invalid.")
 
+
     def second_insert_email(self):
         try:
             user_email = self.chrome.find_element(*self.SECOND_EMAIL)
             user_email.send_keys("valentinvlad03@gmail.com")
         except Exception as i:
             logging.error(f"An error occurred while inserting the email: {str(i)}. This email address is invalid.")
+
 
     def insert_invalid_password(self, password):
         try:
@@ -86,12 +93,14 @@ class Home_page(Browser):
         except Exception as i:
             logging.error(f"An error occurred while inserting the password: {str(i)}")
 
+
     def click_login_button(self):
         try:
             sing_in_button = self.chrome.find_element(*self.LOGIN_BUTTON)
             sing_in_button.click()
         except Exception as i:
             logging.error(f"An error occurred while clicking the Login button: {str(i)}")
+
 
     def second_click_login_button(self):
         try:
@@ -100,11 +109,13 @@ class Home_page(Browser):
         except Exception as i:
             logging.error(f"An error occurred while clicking the Login button: {str(i)}")
 
+
     def login_failed(self, error_message):
         alerta = self.chrome.find_element(*self.ERROR_MESSAGE)
         alerta_text = alerta.text
         assert error_message in alerta_text
         logging.info("Login failed => {}".format(error_message))
+
 
     def insert_password(self):
         try:
@@ -112,6 +123,7 @@ class Home_page(Browser):
             userpassword.send_keys("Testare123!")
         except Exception as i:
             logging.error(f"An error occurred while inserting the password: {str(i)}")
+
 
     def my_account_page(self):
         account_url = "https://www.licentepc.ro/account"
