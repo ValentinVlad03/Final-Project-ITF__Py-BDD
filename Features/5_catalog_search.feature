@@ -8,7 +8,7 @@ Feature: Check that the product search is working properly
       Then  I am redirected to a new page with the following message displayed : "<no_results>"
       Examples:
       | invalid_product   | no_results              |
-      | baloane colorate  | Incearca o noua cautare |
+      | blabla$#%%*9      | Incearca o noua cautare |
       | surubelnita       | Incearca o noua cautare |
       | legume gratinate  | Incearca o noua cautare |
 
